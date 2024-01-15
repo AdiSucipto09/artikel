@@ -3,43 +3,9 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Input Review</title>
+    <title>Tambah Artikel</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-    <!-- <style>
-        body {
-            background-color: #f8f9fa;
-            margin: 0;
-        }
-
-        .container-form {
-            max-width: 600px;
-            margin: auto;
-            margin-top: 20px;
-        }
-
-        .navbar {
-            background-color: #6c757d;
-        }
-
-        .navbar-brand, .nav-link {
-            color: #fff;
-        }
-
-        .content-container {
-            display: none;
-        }
-
-        #content-input-review, #content-visualisasi {
-            display: block;
-        }
-
-        iframe {
-            width: 100%;
-            height: 100vh;
-            border: none;
-        }
-    </style> -->
 </head>
 <body>
     <form id="reviewForm" method="post">
@@ -68,18 +34,12 @@
     <ul class="nav__links">
         <li><a href='http://localhost:3000'>Home</a></li>
         <li><a href='http://localhost:3000/artikel'>Artikel</a></li>
-        <li><a href='http://localhost:3000/banksampah'>Bank Sampah</a></li>
         <li><a href='http://localhost:3000/chatbot'>ChatBot</a></li>
-        <li><a href='http://localhost:7000'>Sentimen</a></li>
+        <li><a href='http://localhost:7000/'>Sentimen</a></li>
     </ul>
     <a href="http://localhost:3000/login" class="cta">
         <button>Login</button>
     </a>
-    <div class='hamburger' onClick={toggleNav}>
-        <div class={`bar ${showNav ? 'change' : ''}`}></div>
-        <div class={`bar ${showNav ? 'change' : ''}`}></div>
-        <div class={`bar ${showNav ? 'change' : ''}`}></div>
-    </div>
 </div>
 
         <div class="container container-form content-container" id="content-input-review">
@@ -128,7 +88,7 @@
                 var xhr = new XMLHttpRequest();
                 xhr.open('POST', '/submit', true);
                 xhr.setRequestHeader('Content-Type', 'application/json');
-                xhr.onreadystatechange = function () {
+                xhr.onreadystatechange = function () {  
                     if (xhr.readyState === 4 && xhr.status === 200) {
                         // Form submitted successfully
                         alert("Form submitted successfully!");
